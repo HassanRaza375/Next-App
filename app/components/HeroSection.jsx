@@ -10,7 +10,7 @@ export default function HeroSection() {
   const [surahs, setSurahs] = useState([]);
   const [filteredSurahs, setFilteredSurahs] = useState([]);
   const [loading, setLoading] = useState(false);
-   const router = useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     const fetchSurahs = async () => {
@@ -29,8 +29,8 @@ export default function HeroSection() {
     fetchSurahs();
   }, []);
 
-   // Auto-filter as user types
-   const handleInputChange = (value) => {
+  // Auto-filter as user types
+  const handleInputChange = (value) => {
     setSearchQuery(value);
     if (!value.trim()) {
       setFilteredSurahs([]);
@@ -42,15 +42,13 @@ export default function HeroSection() {
     );
   };
 
- const handleSelect = (surah) => {
+  const handleSelect = (surah) => {
     router.push(`/surah/${surah.surahNo}`);
     setSearchQuery("");
     setFilteredSurahs([]);
   };
 
-
-
- return (
+  return (
     <div style={{ position: "relative" }}>
       <div
         style={{
@@ -66,13 +64,20 @@ export default function HeroSection() {
           color: "white",
         }}
       >
-        <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>Search Surah</h1>
+        <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>
+          Search Surah
+        </h1>
         <div style={{ position: "relative", width: "250px" }}>
           <InputText
             placeholder="Enter Surah name..."
             value={searchQuery}
             onChange={(e) => handleInputChange(e.target.value)}
-            style={{ width: "100%", padding: "10px", borderRadius: "4px", zIndex: 2 }}
+            style={{
+              width: "100%",
+              padding: "10px",
+              borderRadius: "4px",
+              zIndex: 2,
+            }}
           />
           {searchQuery && filteredSurahs.length > 0 && (
             <ul
@@ -103,7 +108,8 @@ export default function HeroSection() {
                     textAlign: "left",
                   }}
                 >
-                  <strong>{surah.surahName}</strong> — {surah.surahNameTranslation}
+                  <strong>{surah.surahName}</strong> —{" "}
+                  {surah.surahNameTranslation}
                 </li>
               ))}
             </ul>

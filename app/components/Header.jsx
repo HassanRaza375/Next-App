@@ -12,16 +12,16 @@ export default function Header({ onToggleSidebar }) {
         display: "flex",
         alignItems: "center",
         gap: "1rem",
-        justifyContent:'space-between'
+        justifyContent: "space-between",
       }}
     >
       <Button
         icon="pi pi-bars"
-        className="p-button-rounded p-button-text p-button-plain"
+        className="p-button-rounded text-white p-button-text p-button-plain"
         onClick={onToggleSidebar}
         aria-label="Toggle Sidebar"
       />
-      <h1 className="text-center">This is the Website Header</h1>
+      <h1 className="text-center">Quran Pak</h1>
       <div></div>
     </header>
   );
