@@ -6,6 +6,7 @@ import MainSidebar from "./MainSidebar";
 export default function Layout({ children }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  
   return (
     <>
       <MainSidebar isOpen={isOpen} setIsOpen={setIsOpen} />
